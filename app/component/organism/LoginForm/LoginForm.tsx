@@ -1,38 +1,41 @@
 import InputField from "@/app/component/molecule/InputField/InputField";
 import Button from "@/app/component/atom/Button/Button";
-import useInput from "@/app/hook/useInputChange";
 import React, { useEffect, useState } from "react";
 
 interface LoginFormProps {
   handleButtonClick: () => void;
+  id: string;
+  setId: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  password: string;
+  setPassword: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const LoginForm = (props: LoginFormProps) => {
-  const [id, setId] = useInput("");
-  const [password, setPassword] = useInput("");
-
   const LoginFormContainerStyle =
-    "flex flex-col gap-6 p-4 border border-gray-300 rounded-md w-96";
+    "flex flex-col p-4 border border-gray-300 rounded-md w-96 h-72";
 
   return (
     <div className={LoginFormContainerStyle}>
-      <div className={"text-center text-lg"}>Login</div>
-      <div>
-        <InputField
-          label={"Username"}
-          type={"text"}
-          value={id}
-          handleChange={setId}
-        />
-        <InputField
-          label={"Password"}
-          type={"password"}
-          value={password}
-          handleChange={setPassword}
-        />
+      <div className={"text-center text-lg h-[10%]"}>Login</div>
+      <div className={"h-[70%] p-5 flex justify-center items-center"}>
+        <div>
+          <InputField
+            label={"Username"}
+            type={"text"}
+            value={props.id}
+            handleChange={props.setId}
+          />
+          <InputField
+            label={"Password"}
+            type={"password"}
+            value={props.password}
+            handleChange={props.setPassword}
+          />
+        </div>
       </div>
       <Button
         className={"w-full"}
+        message={"로그인"}
         handleButtonClick={props.handleButtonClick}
       />
     </div>

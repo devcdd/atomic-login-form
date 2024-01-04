@@ -4,6 +4,7 @@ import React, { HTMLAttributes } from "react";
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   handleButtonClick: () => void;
+  message: string;
 }
 
 const Button = (props: ButtonProps) => {
@@ -15,7 +16,7 @@ const Button = (props: ButtonProps) => {
       className={props.className + ButtonStyle}
       onClick={props.handleButtonClick}
     >
-      로그인
+      {props.message}
     </button>
   );
 };

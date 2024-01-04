@@ -8,4 +8,4 @@ const Label = (props: LabelProps) => {
   return <label className={"text-sm"}>{props.label}</label>;
 };
 
-export default Label;
+export default React.memo(Label);

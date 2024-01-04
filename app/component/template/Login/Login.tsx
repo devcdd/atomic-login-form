@@ -2,13 +2,29 @@
 
 import LoginForm from "@/app/component/organism/LoginForm/LoginForm";
 import React, { useCallback } from "react";
+import useInput from "@/app/hook/useInputChange";
 
 const Login = () => {
-  const handleButtonClick = useCallback(() => {
-    alert("로그인 버튼이 클릭되었습니다.");
-  }, []);
+  const [id, setId] = useInput("");
+  const [password, setPassword] = useInput("");
 
-  return <LoginForm handleButtonClick={handleButtonClick} />;
+  const handleButtonClick = useCallback(() => {
+    const obj = {
+      id: id,
+      password: password,
+    };
+    console.log(obj);
+  }, [id, password]);
+
+  return (
+    <LoginForm
+      id={id}
+      setId={setId}
+      password={password}
+      setPassword={setPassword}
+      handleButtonClick={handleButtonClick}
+    />
+  );
 };
 
 export default Login;
