@@ -1,17 +1,23 @@
 "use client";
 
-import { HTMLAttributes } from "react";
+import React, { HTMLAttributes } from "react";
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   handleButtonClick: () => void;
 }
 
 const Button = (props: ButtonProps) => {
+  const ButtonStyle =
+    " bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white p-2 border border-blue-500 hover:border-transparent rounded ";
+
   return (
-    <button className={props.className} onClick={props.handleButtonClick}>
+    <button
+      className={props.className + ButtonStyle}
+      onClick={props.handleButtonClick}
+    >
       로그인
     </button>
   );
 };
 
-export default Button;
+export default React.memo(Button);
