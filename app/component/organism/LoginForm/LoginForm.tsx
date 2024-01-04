@@ -1,6 +1,7 @@
 import InputField from "@/app/component/molecule/InputField/InputField";
 import Button from "@/app/component/atom/Button/Button";
 import React, { useEffect, useState } from "react";
+import Title from "@/app/component/atom/Title/Title";
 
 interface LoginFormProps {
   handleButtonClick: () => void;
@@ -16,8 +17,8 @@ const LoginForm = (props: LoginFormProps) => {
 
   return (
     <div className={LoginFormContainerStyle}>
-      <div className={"text-center text-lg h-[10%]"}>Login</div>
-      <div className={"h-[70%] p-5 flex justify-center items-center"}>
+      <Title className={"h-[10%]"} text={"Login"} />
+      <div className={"h-[70%] flex justify-center items-center"}>
         <div>
           <InputField
             label={"Username"}

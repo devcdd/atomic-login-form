@@ -14,6 +14,7 @@ const Login = () => {
       password: password,
     };
     console.log(obj);
+    alert("로그인 되었습니다.");
   }, [id, password]);
 
   return (

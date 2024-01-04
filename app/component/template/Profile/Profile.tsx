@@ -4,7 +4,7 @@ import ProfileForm from "@/app/component/organism/ProfileForm/ProfileForm";
 
 const Profile = () => {
   const handleButtonClick = () => {
-    console.log("DD CONSOLE CHECK > click");
+    alert("로그아웃 되었습니다.");
   };
   return <ProfileForm handleButtonClick={handleButtonClick} />;
 };

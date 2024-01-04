@@ -1,6 +1,7 @@
 import ProfileField from "@/app/component/molecule/ProfileField/ProfileField";
 import Button from "@/app/component/atom/Button/Button";
 import React from "react";
+import Title from "@/app/component/atom/Title/Title";
 
 interface ProfileFormProps {
   handleButtonClick: () => void;
@@ -12,7 +13,7 @@ const ProfileForm = (props: ProfileFormProps) => {
 
   return (
     <div className={ProfileFormContainerStyle}>
-      <div className={"text-center text-lg h-[10%]"}>Profile</div>
+      <Title className={"h-[10%]"} text={"Profile"} />
       <div className={"h-[70%] p-5 flex justify-center items-center"}>
         <ProfileField />
       </div>
