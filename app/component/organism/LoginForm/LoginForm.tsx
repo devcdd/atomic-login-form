@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 import Title from "@/app/component/atom/Title/Title";
 
 interface LoginFormProps {
-  handleButtonClick: () => void;
   id: string;
   setId: (e: React.ChangeEvent<HTMLInputElement>) => void;
   password: string;
   setPassword: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleButtonClick: () => void;
 }
 
 const LoginForm = (props: LoginFormProps) => {

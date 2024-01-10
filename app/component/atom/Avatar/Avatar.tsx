@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-const Avatar = (props) => {
+interface AvatarProps {
+  className?: string;
+}
+
+const Avatar = (props: AvatarProps) => {
   return (
     <div className={"flex justify-center items-center"}>
       <Image
